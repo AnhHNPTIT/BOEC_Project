@@ -7,6 +7,7 @@ package test;
 
 import dao.DanhMucDAOImpl;
 import dao.SanPhamDAOImpl;
+import dao.TaiKhoanDAOImpl;
 
 /**
  *
@@ -14,8 +15,7 @@ import dao.SanPhamDAOImpl;
  */
 public class main {
     public static void main(String[] args) {
-        DanhMucDAOImpl dm = new DanhMucDAOImpl();
-        SanPhamDAOImpl sp = new SanPhamDAOImpl();
-        System.out.println(sp.getListProductByCategory("100002").size());
+        TaiKhoanDAOImpl tk = new TaiKhoanDAOImpl();
+        System.out.println(tk.kiemTraTaiKhoan("anhhn@gmail.com"));
     }
 }

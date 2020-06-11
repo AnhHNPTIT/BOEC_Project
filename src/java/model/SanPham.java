@@ -9,7 +9,7 @@ package model;
  *
  * @author hoang
  */
-public class SanPham {
+public class SanPham implements Comparable<SanPham>{
     private String ma_san_pham;
     private DanhMuc danh_muc;
     private String ten_san_pham;
@@ -95,6 +95,11 @@ public class SanPham {
 
     public void setGiam_gia(int giam_gia) {
         this.giam_gia = giam_gia;
+    }
+
+    @Override
+    public int compareTo(SanPham sp) {
+        return Integer.parseInt(this.ma_san_pham) - Integer.parseInt(sp.ma_san_pham);
     }
     
 }

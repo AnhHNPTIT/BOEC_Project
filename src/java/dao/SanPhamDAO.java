@@ -15,4 +15,7 @@ import model.SanPham;
 public interface SanPhamDAO {
     // lấy danh sách sản phẩm dựa vào mã danh mục
     public ArrayList<SanPham> getListProductByCategory(String ma_danh_muc);
+    
+    // hiển thị thông tin chi tiết sản phẩm
+    public SanPham getChiTietSanPham(String ma_san_pham);
 }

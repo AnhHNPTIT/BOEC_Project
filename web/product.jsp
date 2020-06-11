@@ -4,6 +4,7 @@
     Author     : hoang
 --%>
 
+<%@page import="model.GioHang"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="model.SanPham"%>
 <%@page import="dao.SanPhamDAOImpl"%>
@@ -19,6 +20,12 @@
             SanPhamDAOImpl sanPhamDAO = new SanPhamDAOImpl();
             NumberFormat nf = NumberFormat.getInstance();
             nf.setMinimumIntegerDigits(0);
+            
+            GioHang cart = (GioHang) session.getAttribute("cart");
+            if(cart == null){
+                cart = new GioHang();
+                session.setAttribute("cart", cart);
+            }
         %>
         <div class="col-sm-9 padding-right">
             <div class="features_items"><!--features_items-->
@@ -31,13 +38,14 @@
                                 <img src="<%=sp.getHinh_anh()%>" alt="" />
                                 <h2><%=nf.format(sp.getDon_gia())%>VNĐ</h2>
                                 <p><%=sp.getTen_san_pham()%></p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                <a href="GioHangServlet?command=insert&ma_san_pham=<%=sp.getMa_san_pham()%>&cartID=<%=System.currentTimeMillis()%>" class="btn btn-default add-to-cart">
+                                    <i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                             </div>
                             <div class="product-overlay">
                                 <div class="overlay-content">
                                     <h2><%=nf.format(sp.getDon_gia())%>VNĐ</h2>
                                     <p><%=sp.getTen_san_pham()%></p>
-                                    <a href="#" class="btn btn-default add-to-cart">
+                                    <a href="GioHangServlet?command=insert&ma_san_pham=<%=sp.getMa_san_pham()%>&cartID=<%=System.currentTimeMillis()%>" class="btn btn-default add-to-cart">
                                         <i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
@@ -45,7 +53,7 @@
                         <div class="choose">
                             <ul class="nav nav-pills nav-justified">
                                 <li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào so sánh</a></li>
-                                <li><a href="#"><i class="fa fa-plus-square"></i>Xem chi tiết</a></li>
+                                <li><a href="detail.jsp?ma_san_pham=<%=sp.getMa_san_pham()%>"><i class="fa fa-plus-square"></i>Xem chi tiết</a></li>
                             </ul>
                         </div>
                     </div>

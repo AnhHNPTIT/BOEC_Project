@@ -57,11 +57,11 @@
                                 <h2 class="title text-center">Contact Info</h2>
                                 <address>
                                     <p>E-Shopper Inc.</p>
-                                    <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-                                    <p>Newyork USA</p>
-                                    <p>Mobile: +2346 17 38 93</p>
-                                    <p>Fax: 1-714-252-0026</p>
-                                    <p>Email: info@e-shopper.com</p>
+                                    <p>Km 10 Nguyễn Trãi, Hà Đông, Hà Nội, Việt Nam </p>
+                                    <p>Hà Nội</p>
+                                    <p>Mobile: 0123 456 789</p>
+                                    <p>Fax: 0123 456 789</p>
+                                    <p>Email: boec_project@ptit.edu.vn</p>
                                 </address>
                                 <div class="social-networks">
                                     <h2 class="title text-center">Social Networking</h2>
