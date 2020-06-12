@@ -169,8 +169,8 @@
                                 <li>Shipping Cost <span>Free</span></li>
                                 <li>Total <span>$61</span></li>
                             </ul>
-                            <a class="btn btn-default update" href="">Update</a>
-                            <a class="btn btn-default check_out" href="">Check Out</a>
+                            <a class="btn btn-default update" href="">Hủy đơn hàng</a>
+                            <a class="btn btn-default check_out" href="checkout.jsp">Thanh toán</a>
                         </div>
                     </div>
                 </div>

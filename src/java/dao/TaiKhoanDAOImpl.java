@@ -40,7 +40,7 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO{
     @Override
     public void themTaiKhoan(TaiKhoan tk) {
         Connection cons = DBConnect.getConnection();
-        String sql = "INSERT INTO tai_khoan VALUE (?,?,?,?, ?,?)";
+        String sql = "INSERT INTO tai_khoan VALUE (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = cons.prepareStatement(sql);
             ps.setString(1, tk.getMa_tai_khoan());
@@ -54,6 +54,22 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO{
         } catch (SQLException ex) {
             Logger.getLogger(TaiKhoanDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Override
+    public boolean kiemTraDangNhap(String ten_dang_nhap, String mat_khau) {
+        Connection cons = DBConnect.getConnection();
+        String sql = "SELECT * FROM tai_khoan WHERE ten_dang_nhap = '"+ten_dang_nhap+"' and mat_khau = '"+mat_khau+"'";
+        try {
+            PreparedStatement ps = cons.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TaiKhoanDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
     
 }

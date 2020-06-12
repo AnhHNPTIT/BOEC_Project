@@ -46,6 +46,10 @@
             if(request.getAttribute("mat_khau") != null){
                 mat_khau = (String) request.getAttribute("mat_khau");
             }
+            String err = "";
+            if(request.getAttribute("err") != null){
+                err = (String) request.getAttribute("err");
+            }
         %>
         <jsp:include page = "header.jsp"></jsp:include>
             <section id="form"><!--form-->
@@ -54,9 +58,10 @@
                         <div class="col-sm-4 col-sm-offset-1">
                             <div class="login-form"><!--login form-->
                                 <h2>Đăng nhập hệ thống</h2>
-                                <form action="#">
-                                    <input type="email" placeholder="Email" />
-                                    <input type="password" placeholder="Mật khẩu" />
+                                <form action="DangNhapServlet" method="post">
+                                    <p style="color: red"><%=err%></p>
+                                    <input type="email" placeholder="Email" name="ten_dang_nhap"/>
+                                    <input type="password" placeholder="Mật khẩu" name="mat_khau"/>
                                     <span>
                                         <input type="checkbox" class="checkbox"> 
                                         Duy trì tài khoản

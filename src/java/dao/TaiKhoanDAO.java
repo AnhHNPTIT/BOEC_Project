@@ -17,4 +17,7 @@ public interface TaiKhoanDAO {
     
     // thêm mới tài khoản
     public void themTaiKhoan(TaiKhoan tk);
+    
+    // kiểm tra đăng nhập
+    public boolean kiemTraDangNhap(String ten_dang_nhap, String mat_khau);
 }

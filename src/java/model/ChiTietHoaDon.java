@@ -10,7 +10,7 @@ package model;
  * @author hoang
  */
 public class ChiTietHoaDon {
-    private String ma_chi_tiet_hoa_don;
+    private int ma_chi_tiet_hoa_don;
     private HoaDon hoa_don;
     private SanPham san_pham;
     private int so_luong;
@@ -20,7 +20,7 @@ public class ChiTietHoaDon {
     public ChiTietHoaDon() {
     }
 
-    public ChiTietHoaDon(String ma_chi_tiet_hoa_don, HoaDon hoa_don, SanPham san_pham, int so_luong, double don_gia, int giam_gia) {
+    public ChiTietHoaDon(int ma_chi_tiet_hoa_don, HoaDon hoa_don, SanPham san_pham, int so_luong, double don_gia, int giam_gia) {
         this.ma_chi_tiet_hoa_don = ma_chi_tiet_hoa_don;
         this.hoa_don = hoa_don;
         this.san_pham = san_pham;
@@ -29,11 +29,11 @@ public class ChiTietHoaDon {
         this.giam_gia = giam_gia;
     }
 
-    public String getMa_chi_tiet_hoa_don() {
+    public int getMa_chi_tiet_hoa_don() {
         return ma_chi_tiet_hoa_don;
     }
 
-    public void setMa_chi_tiet_hoa_don(String ma_chi_tiet_hoa_don) {
+    public void setMa_chi_tiet_hoa_don(int ma_chi_tiet_hoa_don) {
         this.ma_chi_tiet_hoa_don = ma_chi_tiet_hoa_don;
     }
 

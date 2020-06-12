@@ -69,7 +69,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
+                                    <li><a href="DangNhapServlet?command=logout"><i class="fa fa-user"></i><%=session.getAttribute("username")%></a></li>
                                     <li><a href="#"><i class="fa fa-star"></i> Đánh giá</a></li>
                                     <li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
                                     <li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
@@ -98,11 +98,11 @@
                                     <li><a href="index.jsp" class="active">Trang chủ</a></li>
                                     <li class="dropdown"><a href="#">Cửa hàng<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="shop.html">Sản phẩm</a></li>
-                                            <li><a href="product-details.html">Chi tiết sản phẩm</a></li> 
-                                            <li><a href="checkout.html">Thanh toán</a></li> 
-                                            <li><a href="cart.html">Giỏ hàng</a></li> 
-                                            <li><a href="login.html">Đăng nhập</a></li> 
+                                            <li><a href="product.jsp">Sản phẩm</a></li>
+                                            <li><a href="detail.jsp">Chi tiết sản phẩm</a></li> 
+                                            <li><a href="checkout.jsp">Thanh toán</a></li> 
+                                            <li><a href="cart.jsp">Giỏ hàng</a></li> 
+                                            <li><a href="account.jsp">Đăng nhập</a></li> 
                                         </ul>
                                     </li> 
                                     <li class="dropdown"><a href="#">Bài viết<i class="fa fa-angle-down"></i></a>
