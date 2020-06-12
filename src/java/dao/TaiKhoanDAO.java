@@ -20,4 +20,7 @@ public interface TaiKhoanDAO {
     
     // kiểm tra đăng nhập
     public boolean kiemTraDangNhap(String ten_dang_nhap, String mat_khau);
+    
+    // lấy tài khoản dựa vào tên đăng nhập
+    public TaiKhoan getTaiKhoan(String ten_dang_nhap);
 }

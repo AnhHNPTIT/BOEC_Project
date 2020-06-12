@@ -74,4 +74,41 @@ public class SanPhamDAOImpl implements SanPhamDAO {
         }
         return sp;
     }
+
+    @Override
+    public ArrayList<SanPham> getList() {
+        Connection cons = DBConnect.getConnection();
+        String sql = "SELECT * FROM san_pham";
+        ArrayList<SanPham> arr = new ArrayList<>();
+        try {
+            PreparedStatement ps = cons.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                SanPham sp = new SanPham();
+                sp.setMa_san_pham(rs.getString("ma_san_pham"));
+                DanhMuc dm = new DanhMuc(rs.getString("ma_danh_muc"), "", "");
+                sp.setDanh_muc(dm);
+                sp.setTen_san_pham(rs.getString("ten_san_pham"));
+                sp.setHinh_anh(rs.getString("Hinh_anh"));
+                sp.setSo_luong(rs.getInt("so_luong"));
+                sp.setMo_ta(rs.getString("mo_ta"));
+                sp.setDon_gia(rs.getDouble("don_gia"));
+                sp.setGiam_gia(rs.getInt("giam_gia"));
+                arr.add(sp);
+            }
+            cons.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPhamDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return arr;
+    }
+
+    @Override
+    public ArrayList<SanPham> getListByPage(ArrayList<SanPham> arr, int start, int end) {
+        ArrayList<SanPham> list = new ArrayList<>();
+        for(int i = start; i< end; i++){
+            list.add(arr.get(i));
+        }
+        return list;
+    }
 }

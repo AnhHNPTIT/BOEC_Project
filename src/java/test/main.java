@@ -6,8 +6,12 @@
 package test;
 
 import dao.DanhMucDAOImpl;
+import dao.HoaDonDAOImpl;
 import dao.SanPhamDAOImpl;
 import dao.TaiKhoanDAOImpl;
+import java.sql.Timestamp;
+import model.HoaDon;
+import model.TaiKhoan;
 
 /**
  *
@@ -15,7 +19,7 @@ import dao.TaiKhoanDAOImpl;
  */
 public class main {
     public static void main(String[] args) {
-        TaiKhoanDAOImpl tk = new TaiKhoanDAOImpl();
-        System.out.println(tk.kiemTraTaiKhoan("anhhn@gmail.com"));
+        TaiKhoanDAOImpl tkDAO = new TaiKhoanDAOImpl();
+        System.out.println(tkDAO.getTaiKhoan("canhdd@gmail.com").getMa_tai_khoan());
     }
 }

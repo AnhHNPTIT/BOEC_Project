@@ -71,5 +71,24 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO{
         }
         return false;
     }
+
+    @Override
+    public TaiKhoan getTaiKhoan(String ten_dang_nhap) {
+        Connection cons = DBConnect.getConnection();
+        String sql = "SELECT * FROM tai_khoan WHERE ten_dang_nhap = '"+ten_dang_nhap+"'";
+        
+        try {
+            PreparedStatement ps = cons.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                TaiKhoan tk = new TaiKhoan();
+                tk.setMa_tai_khoan(rs.getString("ma_tai_khoan"));
+                return tk;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TaiKhoanDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
     
 }

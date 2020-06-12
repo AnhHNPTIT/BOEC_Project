@@ -55,11 +55,11 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr class="cart_menu">
-                                    <td class="image">Item</td>
+                                    <td class="image">Sản phẩm</td>
                                     <td class="description"></td>
-                                    <td class="price">Price</td>
-                                    <td class="quantity">Quantity</td>
-                                    <td class="total">Total</td>
+                                    <td class="price">Đơn giá</td>
+                                    <td class="quantity">Số lượng</td>
+                                    <td class="total">Thành tiền</td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -100,19 +100,19 @@
                                 <td colspan="2">
                                     <table class="table table-condensed total-result">
                                         <tr>
-                                            <td>Cart Sub Total</td>
+                                            <td>Tiền hàng</td>
                                             <td>$59</td>
                                         </tr>
                                         <tr>
-                                            <td>Exo Tax</td>
+                                            <td>Tiền thuế</td>
                                             <td>$2</td>
                                         </tr>
                                         <tr class="shipping-cost">
-                                            <td>Shipping Cost</td>
-                                            <td>Free</td>										
+                                            <td>Phí ship</td>
+                                            <td>Miễn phí</td>										
                                         </tr>
                                         <tr>
-                                            <td>Total</td>
+                                            <td>Tổng tiền</td>
                                             <td><span>$61</span></td>
                                         </tr>
                                     </table>

@@ -18,4 +18,8 @@ public interface SanPhamDAO {
     
     // hiển thị thông tin chi tiết sản phẩm
     public SanPham getChiTietSanPham(String ma_san_pham);
+    
+    public ArrayList<SanPham> getList();
+    
+    public ArrayList<SanPham> getListByPage(ArrayList<SanPham> arr, int start, int end);
 }
