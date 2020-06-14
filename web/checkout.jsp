@@ -40,7 +40,7 @@
                     session.setAttribute("cart", cart);
                 }
                 TreeMap<SanPham, Integer> list = cart.getList();
-
+                double cost = 0;
                 NumberFormat nf = NumberFormat.getInstance();
                 nf.setMinimumIntegerDigits(0);
         %>
@@ -66,6 +66,7 @@
                             <tbody>
                             <%
                                 for (Map.Entry<SanPham, Integer> ds : list.entrySet()) {
+                                    cost += ds.getValue() * ds.getKey().getDon_gia();
                             %>
                             <tr>
                                 <td class="cart_product">
@@ -101,19 +102,19 @@
                                     <table class="table table-condensed total-result">
                                         <tr>
                                             <td>Tiền hàng</td>
-                                            <td>$59</td>
+                                            <td><%=nf.format(cost)%> VNĐ</td>
                                         </tr>
                                         <tr>
                                             <td>Tiền thuế</td>
-                                            <td>$2</td>
+                                            <td><%=nf.format(0.1*cost)%> VNĐ</td>
                                         </tr>
                                         <tr class="shipping-cost">
-                                            <td>Phí ship</td>
+                                            <td>Tiền ship</td>
                                             <td>Miễn phí</td>										
                                         </tr>
                                         <tr>
                                             <td>Tổng tiền</td>
-                                            <td><span>$61</span></td>
+                                            <td><span><%=nf.format(1.1*cost)%> VNĐ</span></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -134,7 +135,7 @@
                                         <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
                                         <option value="Chuyển khoản qua ngân hàng">Chuyển khoản qua ngân hàng</option>
                                     </select>
-                                    <input type="hidden" value="<%=session.getAttribute("username")%>"/>
+                                    <input type="hidden" name="username" value="<%=session.getAttribute("username")%>"/>
                                     <input type="submit" value="Xác nhận thanh toán" class="btn btn-primary">
                                 </form>
                             </div>

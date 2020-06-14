@@ -37,9 +37,10 @@
                 session.setAttribute("cart", cart);
             }
             TreeMap<SanPham, Integer> list = cart.getList();
-            
+
             NumberFormat nf = NumberFormat.getInstance();
             nf.setMinimumIntegerDigits(0);
+            double cost = 0;
         %>
         <jsp:include page = "header.jsp"></jsp:include>
             <section>
@@ -62,6 +63,7 @@
                                         <tbody>
                                         <%
                                             for (Map.Entry<SanPham, Integer> ds : list.entrySet()) {
+                                                cost += ds.getValue() * ds.getKey().getDon_gia();
                                         %>
                                         <tr>
                                             <td class="cart_product">
@@ -164,10 +166,10 @@
                     <div class="col-sm-6">
                         <div class="total_area">
                             <ul>
-                                <li>Cart Sub Total <span>$59</span></li>
-                                <li>Eco Tax <span>$2</span></li>
-                                <li>Shipping Cost <span>Free</span></li>
-                                <li>Total <span>$61</span></li>
+                                <li>Tiền hàng <span><%=nf.format(cost)%> VNĐ</span></li>
+                                <li>Tiền thuế <span><%=nf.format(0.1*cost)%> VNĐ</span></li>
+                                <li>Tiền ship <span>Miễn phí</span></li>
+                                <li>Tổng tiền <span><%=nf.format(1.1*cost)%> VNĐ</span></li>
                             </ul>
                             <a class="btn btn-default update" href="">Hủy đơn hàng</a>
                             <a class="btn btn-default check_out" href="checkout.jsp">Thanh toán</a>

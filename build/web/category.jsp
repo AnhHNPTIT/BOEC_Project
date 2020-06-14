@@ -14,6 +14,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=250508542921044&autoLogAppEvents=1" nonce="6QTyLstI"></script>
         <%
             DanhMucDAOImpl danhMucDAO = new DanhMucDAOImpl();
         %>
@@ -65,7 +67,7 @@
                 <div class="shipping text-center"><!--shipping-->
                     <img src="images/home/shipping.jpg" alt="" />
                 </div><!--/shipping-->
-                
+                <div class="fb-like" data-href="https://www.facebook.com/thuvienanhhoang271257/" data-width="500px" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
                 <div style="clear: both; margin-bottom: 40px"></div>
             </div>
         </div>

@@ -23,6 +23,7 @@ import model.GioHang;
 import model.HoaDon;
 import model.SanPham;
 import model.TaiKhoan;
+import tools.sendMail;
 
 /**
  *
@@ -49,13 +50,12 @@ public class ThanhToanServlet extends HttpServlet {
         String tai_khoan = request.getParameter("username");
         HttpSession session = request.getSession();
         GioHang cart = (GioHang) session.getAttribute("cart");
-        
+        sendMail.sendMail(tai_khoan, "BOEC_Project", "Bạn vừa thêm một đơn hàng mới!");
         try{
             Date date = new Date();
             String mhd = "" + date.getTime();
             TaiKhoan tk = new TaiKhoan();
-            // chưa lấy được tên đăng nhập -> mã tài khoản
-            //tk.setMa_tai_khoan(taiKhoanDAO.getTaiKhoan(tai_khoan).getMa_tai_khoan());
+            tk.setMa_tai_khoan(taiKhoanDAO.getTaiKhoan(tai_khoan).getMa_tai_khoan());
             HoaDon hd = new HoaDon(mhd, tk, dia_chi_giao_hang, phuong_thuc_thanh_toan, new Timestamp(new Date().getTime()), 0);
             hd.setMa_hoa_don(mhd);
             hoaDonDAO.themHoaDon(hd);
