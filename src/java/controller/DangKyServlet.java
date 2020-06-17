@@ -68,7 +68,7 @@ public class DangKyServlet extends HttpServlet {
         try{
             if(mat_khau_err.length() == 0 && ten_dang_nhap_err.length() == 0 && ten_tai_khoan_err.length() == 0){
                 Date id = new Date();
-                TaiKhoan tk = new TaiKhoan("" + id.getTime(), ten_tai_khoan, ten_dang_nhap, MaHoa.maHoaMD5(mat_khau), 2, 1);
+                TaiKhoan tk = new TaiKhoan("" + id.getTime(), ten_tai_khoan, ten_dang_nhap, MaHoa.maHoaMD5(mat_khau), 1, 1);
                 taiKhoanDAO.themTaiKhoan(tk);
                 url = "/index.jsp";
             } else{

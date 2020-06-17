@@ -4,6 +4,7 @@
     Author     : hoang
 --%>
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.SanPham"%>
 <%@page import="dao.SanPhamDAOImpl"%>
@@ -42,6 +43,8 @@
                 end = Integer.parseInt(request.getParameter("end"));
             }
             ArrayList<SanPham> list = sanPhamDAO.getListByPage(arr, start, end);
+            NumberFormat nf = NumberFormat.getInstance();
+            nf.setMinimumIntegerDigits(0);
         %>
         <jsp:include page = "header.jsp"></jsp:include>
         <jsp:include page = "slider.jsp"></jsp:include>
@@ -60,13 +63,13 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="<%=sp.getHinh_anh()%>" alt="" />
-                                            <h2><%=sp.getDon_gia()%></h2>
+                                            <h2><%=nf.format(sp.getDon_gia())%>VNĐ</h2>
                                             <p><%=sp.getTen_san_pham()%></p>
                                             <a href="GioHangServlet?command=insert&ma_san_pham=<%=sp.getMa_san_pham()%>&cartID=<%=System.currentTimeMillis()%>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
-                                                <h2><%=sp.getDon_gia()%></h2>
+                                                <h2><%=nf.format(sp.getDon_gia())%>VNĐ</h2>
                                                 <p><%=sp.getTen_san_pham()%></p>
                                                 <a href="GioHangServlet?command=insert&ma_san_pham=<%=sp.getMa_san_pham()%>&cartID=<%=System.currentTimeMillis()%>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                                             </div>
@@ -88,17 +91,17 @@
                                 <%
                                     int a, b;
                                     int limit = arr.size() / 9;
-                                    if(limit * 9 < arr.size()){
+                                    if (limit * 9 < arr.size()) {
                                         limit += 1;
                                     }
-                                    for(int i = 1; i <= limit; i++){
+                                    for (int i = 1; i <= limit; i++) {
                                         a = (i - 1) * 9;
                                         b = i * 9;
-                                        if(b > arr.size()){
+                                        if (b > arr.size()) {
                                             b = arr.size();
                                         }
                                 %>
-                                <li class="active"><a href="list.jsp?start=<%=a%>&end=<%=b%>"<%=i%></a></li>
+                                <li class="active"><a href="list.jsp?start=<%=a%>&end=<%=b%>"><%=i%></a></li>
                                 <%
                                     }
                                 %>

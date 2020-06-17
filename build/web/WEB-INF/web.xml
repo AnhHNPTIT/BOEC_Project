@@ -16,6 +16,18 @@
         <servlet-name>ThanhToanServlet</servlet-name>
         <servlet-class>controller.ThanhToanServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DangNhapAdminServlet</servlet-name>
+        <servlet-class>controller.DangNhapAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DangNhapAdServlet</servlet-name>
+        <servlet-class>DangNhapAdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>controller.AdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GioHangServlet</servlet-name>
         <url-pattern>/GioHangServlet</url-pattern>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>ThanhToanServlet</servlet-name>
         <url-pattern>/ThanhToanServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DangNhapAdminServlet</servlet-name>
+        <url-pattern>/DangNhapAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DangNhapAdServlet</servlet-name>
+        <url-pattern>/DangNhapAdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -98,7 +98,7 @@
                                     <li><a href="index.jsp" class="active">Trang chủ</a></li>
                                     <li class="dropdown"><a href="#">Cửa hàng<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="product.jsp">Sản phẩm</a></li>
+                                            <li><a href="list.jsp">Sản phẩm</a></li>
                                             <li><a href="detail.jsp">Chi tiết sản phẩm</a></li> 
                                             <li><a href="checkout.jsp">Thanh toán</a></li> 
                                             <li><a href="cart.jsp">Giỏ hàng</a></li> 

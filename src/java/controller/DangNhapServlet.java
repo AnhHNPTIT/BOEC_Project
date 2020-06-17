@@ -26,7 +26,7 @@ public class DangNhapServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getParameter("command").equals("logout")){
+        if (request.getParameter("command").equals("logout")) {
             HttpSession session = request.getSession();
             session.invalidate();
             response.sendRedirect("/BOEC_Project/index.jsp");
@@ -54,9 +54,9 @@ public class DangNhapServlet extends HttpServlet {
         String url = "/account.jsp";
         try {
             if (err.length() == 0) {
-                HttpSession session = request.getSession();
-                session.setAttribute("username", ten_dang_nhap);
-                url = "/index.jsp";
+                    HttpSession session = request.getSession();
+                    session.setAttribute("username", ten_dang_nhap);
+                    url = "/index.jsp";
             } else {
                 url = "/account.jsp";
             }

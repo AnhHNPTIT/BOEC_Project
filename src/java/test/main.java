@@ -19,7 +19,5 @@ import model.TaiKhoan;
  */
 public class main {
     public static void main(String[] args) {
-        TaiKhoanDAOImpl tkDAO = new TaiKhoanDAOImpl();
-        System.out.println(tkDAO.getTaiKhoan("canhdd@gmail.com").getMa_tai_khoan());
     }
 }
